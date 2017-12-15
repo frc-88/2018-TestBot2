@@ -2,3 +2,5 @@
 /build/
 /dist/
 /.classpath
+/build.xml
+/build.properties
