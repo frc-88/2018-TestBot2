@@ -26,9 +26,11 @@ public class Drive extends Subsystem {
 	}
 	
 	public void wheelSpeed(double left, double right){
-		leftSpark.set(left);
+		leftSpark.set(-left);
+		leftVictor.set(-left);
+
+		
 		rightSpark.set(right);
-		leftVictor.set(left);
 		rightVictor.set(right);
 	}
 

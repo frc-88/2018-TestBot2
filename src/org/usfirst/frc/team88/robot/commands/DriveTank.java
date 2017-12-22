@@ -3,6 +3,7 @@ package org.usfirst.frc.team88.robot.commands;
 import org.usfirst.frc.team88.robot.Robot;
 
 import edu.wpi.first.wpilibj.command.Command;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 /**
  *
@@ -21,9 +22,15 @@ public class DriveTank extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	Robot.drive.wheelSpeed(Robot.oi.applyPoly(Robot.oi.getDriverRightY()),
-    			Robot.oi.applyPoly(Robot.oi.getDriverLeftY()));
+    	double left, right;
     	
+    	right = Robot.oi.applyPoly(Robot.oi.getDriverRightY());
+    	left = Robot.oi.applyPoly(Robot.oi.getDriverLeftY());
+    	
+    	SmartDashboard.putNumber("left", left);
+    	SmartDashboard.putNumber("right", right);
+    	
+    	Robot.drive.wheelSpeed(left, right);
     }
 
     // Make this return true when this Command no longer needs to run execute()
