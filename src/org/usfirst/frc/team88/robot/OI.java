@@ -2,7 +2,7 @@ package org.usfirst.frc.team88.robot;
 
 import edu.wpi.first.wpilibj.Joystick;
 
-
+import org.usfirst.frc.team88.robot.commands.IntakeCommand;
 
 import edu.wpi.first.wpilibj.GenericHID.RumbleType;
 import edu.wpi.first.wpilibj.buttons.Button;
@@ -72,7 +72,6 @@ public class OI {
 
 		
 		
-
 	}
 
 
