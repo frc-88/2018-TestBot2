@@ -26,5 +26,7 @@ public class RobotMap {
 	// Intake 
 	public static int leftSide = 5;
 	public static int rightSide = 6;
+	     //Analog Input
+	public static int sharpIR = 0;
 	
 }
