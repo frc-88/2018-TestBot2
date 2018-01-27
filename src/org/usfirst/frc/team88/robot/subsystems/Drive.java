@@ -44,9 +44,9 @@ public class Drive extends Subsystem {
 		rightSpark.set(right);
 		rightVictor.set(right);
 		
-		SmartDashboard.putNumber("left", left);
-		SmartDashboard.putNumber("right", right);
-		SmartDashboard.putNumber("Yaw", navX.getYaw());
+		SmartDashboard.putNumber("Drive/left", left);
+		SmartDashboard.putNumber("Drive/right", right);
+		SmartDashboard.putNumber("Drive/Yaw", navX.getYaw());
 	}
 	
 	/**
@@ -86,8 +86,8 @@ public class Drive extends Subsystem {
 		double leftOutput;
 		double rightOutput;
 
-		SmartDashboard.putNumber("Curve", curve);
-		SmartDashboard.putNumber("Magnitude", outputMagnitude);
+		SmartDashboard.putNumber("Drive/Curve", curve);
+		SmartDashboard.putNumber("Drive/Magnitude", outputMagnitude);
 		
 		if (Math.abs(outputMagnitude) < 0.10) {
 			leftOutput = -curve * 0.5;

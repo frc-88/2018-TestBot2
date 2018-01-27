@@ -60,7 +60,7 @@ public class Intake extends Subsystem {
 		else {
 			haveCube = false;
 		}
-		SmartDashboard.putBoolean("Has Cube", haveCube);
+		SmartDashboard.putBoolean("Intake/Has Cube", haveCube);
 		return distance;
 	}
 
