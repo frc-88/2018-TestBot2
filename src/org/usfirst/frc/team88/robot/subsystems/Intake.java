@@ -7,6 +7,7 @@ import org.usfirst.frc.team88.robot.commands.IntakeCommand;
 
 import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.command.Subsystem;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 /**
  * Kyle Hackett
@@ -24,6 +25,7 @@ public class Intake extends Subsystem {
 	private Talon rightSide; 
 	private Talon leftSide; 
 	private SharpIR distanceSensor;
+	private boolean haveCube = false;
 	// Put methods for controlling this subsystem
 	// here. Call these from Commands.
 
@@ -50,7 +52,15 @@ public class Intake extends Subsystem {
 
 	public double cubeDistance(){
 		double distance = distanceSensor.getDistance();
-
+		
+		//TODO Change the distances to allow for different positions of cube as well as the actual distance
+		if((distance < 5)&&(distance < 5)){
+			haveCube = true;
+		}
+		else {
+			haveCube = false;
+		}
+		SmartDashboard.putBoolean("Has Cube", haveCube);
 		return distance;
 	}
 
