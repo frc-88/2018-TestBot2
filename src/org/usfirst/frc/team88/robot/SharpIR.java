@@ -31,8 +31,7 @@ private static final double K = 5.12;
 
 		distance = (K / voltage) - 0.42;
 		
-		SmartDashboard.putNumber("Intake/IR Sensor Distance", distance );
-		SmartDashboard.putNumber("Intake/IR Sensor Voltage", voltage);
+		
 
 		return distance;
 	}

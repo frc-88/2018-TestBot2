@@ -27,6 +27,7 @@ public class RobotMap {
 	public static int leftSide = 5;
 	public static int rightSide = 6;
 	     //Analog Input
-	public static int sharpIR = 0;
+	public static int sharpIR_RIGHT = 0;
+	public static int sharpIR_LEFT = 1;
 	
 }
