@@ -10,6 +10,10 @@ import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
+//Pneumatics
+import edu.wpi.first.wpilibj.DoubleSolenoid;
+import edu.wpi.first.wpilibj.DoubleSolenoid.Value;
+
 /**
  * Kyle Hackett
  * 
@@ -25,9 +29,12 @@ public class Intake extends Subsystem {
 	final double LOWERSPEED = .50;
 	private Talon rightSide; 
 	private Talon leftSide; 
+	//Sensors
 	private SharpIR distanceSensorRight;
 	private SharpIR distanceSensorLeft;
 	private boolean haveCube = false;
+	//Pneumatics
+	DoubleSolenoid  intakeUpDown;
 	// Put methods for controlling this subsystem
 	// here. Call these from Commands.
 
@@ -37,6 +44,7 @@ public class Intake extends Subsystem {
 		leftSide = new Talon(RobotMap.leftSide);
 		distanceSensorRight = new SharpIR(RobotMap.sharpIR_RIGHT);
 		distanceSensorLeft = new SharpIR(RobotMap.sharpIR_LEFT);
+		intakePneumatics();
 
 	}
 
@@ -75,13 +83,29 @@ public class Intake extends Subsystem {
 		SmartDashboard.putNumber("Intake/IR Sensor Distance Right", distanceSensorRight.getDistance());
 		SmartDashboard.putNumber("Intake/IR Sensor Voltage Left", distanceSensorLeft.getVoltage());
 		SmartDashboard.putNumber("Intake/IR Sensor Voltage Right", distanceSensorRight.getVoltage());
+				
 		
+	}
+
+	private void intakePneumatics(){
 		
+		intakeUpDown = new DoubleSolenoid(RobotMap.intakeSolenoidIn, RobotMap.intakeSolenoidOut);
+		intakeUpDown.set(Value.kOff);
 		
 		
 	}
 
-
+	public void intakeCradleUp(){
+		intakeUpDown.set(Value.kForward);
+		
+	}
+	
+	public void intakeCradleDown(){
+		intakeUpDown.set(Value.kReverse);
+		
+	}
+	
+	
 	public void initDefaultCommand() {
 		// Set the default command for a subsystem here.
 		//setDefaultCommand(new MySpecialCommand());

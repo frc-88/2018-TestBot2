@@ -29,5 +29,9 @@ public class RobotMap {
 	     //Analog Input
 	public static int sharpIR_RIGHT = 0;
 	public static int sharpIR_LEFT = 1;
+		//Pneumatics
+	public static int intakeSolenoidIn;
+	public static int intakeSolenoidOut;
+	
 	
 }

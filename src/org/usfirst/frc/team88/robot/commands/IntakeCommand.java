@@ -32,6 +32,7 @@ public class IntakeCommand extends Command {
 
 		Robot.intake.UpdateDashboard();
 		Robot.intake.intakeWheelSpeed(Robot.oi.applyPoly(Robot.oi.getDriverZ()));
+		
 
 		// Disconnected Sensor 
 		Distances distance = Robot.intake.cubeDistance();
